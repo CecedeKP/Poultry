@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  base: '/Ecomotech_Farm/',  // Match GitHub repository name exactly
+  base: '/Poultry/',  // Match GitHub repository name exactly
   plugins: [react()],
   resolve: {
     alias: {
