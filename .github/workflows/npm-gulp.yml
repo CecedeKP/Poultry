@@ -43,7 +43,7 @@ jobs:
           chmod +x node_modules/.bin/vite
           npx vite build
         env:
-          VITE_BASE_URL: /Poultry/
+          VITE_BASE_URL: '/'
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
