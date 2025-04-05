@@ -28,10 +28,14 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm ci
+          npm install -g vite
 
       - name: Build
-        run: npm run build
+        run: |
+          chmod +x node_modules/.bin/vite
+          npx vite build
         env:
           VITE_BASE_URL: /Poultry/
 
