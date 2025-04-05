@@ -1,0 +1,7 @@
+# Dependencies
+node_modules
+.cache
+dist
+
+# gh-pages cache
+node_modules/.cache/gh-pages

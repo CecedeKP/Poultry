@@ -21,6 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Clean gh-pages cache
+        run: |
+          rm -rf node_modules/.cache
+          git rm -rf --cached node_modules/.cache || true
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -49,6 +54,8 @@ jobs:
 
       - name: Deploy to Netlify
         env:
+          # Get this from User Settings → Applications → Personal access tokens
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          # Get this from Site Settings → Site information → API ID
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: netlify deploy --prod --dir=dist
